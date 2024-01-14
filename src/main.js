@@ -4,8 +4,15 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 
-const app = createApp(App)
+import { library } from '@fortawesome/fontawesome-svg-core'
 
-app.use(createPinia())
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-app.mount('#app')
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+/* add icons to the library */
+library.add(fas)
+
+createApp(App).use(createPinia())
+    .component('font-awesome-icon', FontAwesomeIcon)
+    .mount('#app')
