@@ -1,16 +1,14 @@
 
-<template>
 
-  <h1>Login</h1>
+<template>
 
 </template>
 
 <script>
 export default {
-  name: "Log in"
+  name: "SettingsAccount"
 }
 </script>
-
 
 <style scoped>
 

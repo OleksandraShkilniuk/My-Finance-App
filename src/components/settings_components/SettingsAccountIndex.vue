@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "History"
+  name: "SettingsAccountIndex"
 }
 </script>
 
