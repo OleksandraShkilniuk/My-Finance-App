@@ -15,19 +15,18 @@
 
       <div class="center">
         <div class="form-inputs">
-          <form action="#" method="post">
 
-            <input type="text" class="form-control my-2" placeholder="Name">
-            <input type="email" class="form-control my-2" placeholder="Email">
-            <input type="password" class="form-control my-2" placeholder="Password">
-            <input type="password" class="form-control" placeholder="Password confirmation">
-          </form>
+            <input type="text" class="form-control my-2" placeholder="Name" v-model.trim="registerData.name">
+            <input type="email" class="form-control my-2" placeholder="Email" v-model.trim="registerData.email">
+            <input type="password" class="form-control my-2" placeholder="Password" v-model.trim="registerData.password">
+            <input type="password" class="form-control" placeholder="Password confirmation" v-model.trim="registerData.confirmPassword">
+
         </div>
       </div>
 
 <!--      Form end-->
 
-      <button type="button" class="btn btn-primary m-3">Sign In</button>
+      <button type="button" class="btn btn-primary m-3" @click="register">Sign Up</button>
 
       <p class="account-no">Have an account?</p>
 
@@ -42,10 +41,26 @@
 <script>
 export default {
   name: "Registration",
+  data() {
+    return{
+      registerData: {
+        name: null,
+        email: null,
+        password: null,
+        confirmPassword: null,
+      }
+    }
+  },
 
   methods: {
     gotoLogin() {
       this.$emit('gotoLogin')
+    },
+
+    register() {
+      axios.post('/register', this.registerData).then((response)=> {
+       console.log(response);
+      })
     }
   }
 }

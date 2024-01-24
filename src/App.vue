@@ -1,9 +1,9 @@
 
 <template>
 
-  <auth-index v-if="!isAuthenticated"/>
+  <auth-index v-if="isAuthenticated"/>
 
-  <div v-if="isAuthenticated">
+  <div v-if="!isAuthenticated">
 
     <div>
 
@@ -55,7 +55,7 @@ export default {
     return {
       registration: false,
       activePage: 'Home',
-      transactionForm: true,
+      transactionForm: false,
 
     }
   },
@@ -69,8 +69,13 @@ export default {
   computed: {
     ...mapStores(useAccountStore),
     isAuthenticated() {
-     return true
+      console.log(this.accountStore.isAuthenticated)
+      return this.accountStore.isAuthenticated;
     }
+  },
+
+  created() {
+    this.accountStore.fetchMyAccount()
   }
 
 }
