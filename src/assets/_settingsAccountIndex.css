@@ -1,0 +1,31 @@
+
+.user-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.user-name {
+    font-size: 16px;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+header {
+    width: 100%;
+    background: var(--Grey-200, #EEE);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.function-name {
+    margin-left: 10px;
+}
+
+a {
+    color: black; /* Default link color */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #ff4081; /* Hover text color, replace with your desired color */
+}

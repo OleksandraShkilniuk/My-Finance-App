@@ -1,1 +1,29 @@
 @import "bootstrap/scss/bootstrap.scss";
+
+/*style for toolbar*/
+
+@import "_navMenu.css";
+
+/*style for settings page*/
+
+@import "_settingsAccountIndex.css";
+
+/*style for Home page with day expenses*/
+@import "_homeDayExpenses.css";
+
+/*style for Login Page*/
+
+@import "_loginVSregistrPage.css";
+
+/*style for monthToggler*/
+@import "_monthToggler.css";
+
+/*style for summary balance*/
+@import "_summaryBalance.css";
+
+/*style for tool bar up*/
+@import "_toolbarUp.css";
+
+/*style for transaction form*/
+
+@import "_transactionForm.css";

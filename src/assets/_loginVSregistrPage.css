@@ -1,0 +1,63 @@
+
+.btn-style {
+    text-decoration: none;
+    padding: 5px 12px;
+    width: 80px;
+    height: 30px;
+    border: black solid 1px;
+    color: black;
+
+}
+
+.form-inputs{
+    width: 328px;
+    border-radius: 4px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.account-no {
+    color: var(--Grey-800, #424242);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+.container {
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 8vh;
+}
+
+.logo {
+    background: url(".././icons/Kitty-Logo.svg") center;
+    background-size: contain;
+    width: 86px;
+    height: 86px;
+}
+.naming {
+    color: var(--Grey-800, #424242);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 44px;
+    margin-top: 12px;
+}
+
+.create-acc {
+    color: var(--Grey-800, #424242);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}

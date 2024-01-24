@@ -1,24 +1,25 @@
 
 <template>
 
-  <div class="d-flex justify-content-around summary-balance">
+  <div class="d-flex my-4 justify-content-around summary-balance">
 
     <div>
       <font-awesome-icon :icon="'money-bills'" />
-      <p>-12000</p>
+      <p class="text-danger">-12000</p>
       <div class="expenses">Expenses</div>
     </div>
+
+    <div>
+      <font-awesome-icon :icon="'building-columns'" />
+      <p class="text-success">-12000</p>
+      <div class="income">Income</div>
+    </div>
+
 
     <div>
       <font-awesome-icon :icon="'wallet'" />
       <p>-12000</p>
       <div class="balance">Balance</div>
-    </div>
-
-    <div>
-      <font-awesome-icon :icon="'building-columns'" />
-      <p>-12000</p>
-      <div class="income">Income</div>
     </div>
 
   </div>
@@ -33,13 +34,5 @@ export default {
 
 
 <style scoped>
-
-.summary-balance {
-  border: 1px solid var(--Grey-300, #E0E0E0);
-  padding: 16px 24px;
-  margin-left: 100px;
-  margin-right: 100px;
-  border-radius: 8px;
-}
 
 </style>

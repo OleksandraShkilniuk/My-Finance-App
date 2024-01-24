@@ -2,7 +2,7 @@
 
 <template>
 
-  <div class="container my-4 d-flex justify-content-between">
+  <div class=" my-4 d-flex justify-content-between">
 
     <div class="arrow-left"></div>
 
@@ -24,26 +24,6 @@ export default {
 </script>
 
 <style scoped>
-
-.arrow-left {
-  background: url("../.././icons/Arrow.svg") no-repeat center;
-  width: 24px;
-  height: 24px;
-}
-.arrow-right {
-  background: url("../.././icons/Arrow.svg") no-repeat center;
-  width: 24px;
-  height: 24px;
-  transform: scaleX(-1);
-}
-
-.date {
-  background: var(--Grey-100, #F5F5F5);
-  border-radius: 50px;
-  width: 124px;
-  height: 32px;
-  padding: 8px 12px;
-}
 
 
 </style>

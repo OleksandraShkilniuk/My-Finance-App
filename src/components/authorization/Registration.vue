@@ -1,6 +1,5 @@
 
 <template>
-  <h2>Registration</h2>
 
   <div class="container container-fluid">
 
@@ -53,41 +52,5 @@ export default {
 </script>
 
 <style>
-.container {
-  font-family: Inter, sans-serif;
-  font-size: 13px;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  width: 100%;
-  margin-left: 16px;
-  margin-right: 16px;
-}
-
-.logo {
-  background: url("../.././icons/Kitty-Logo.svg") center;
-  background-size: contain;
-  width: 86px;
-  height: 86px;
-}
-.naming {
-  color: var(--Grey-800, #424242);
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  margin-bottom: 44px;
-  margin-top: 12px;
-}
-
-.create-acc {
-  color: var(--Grey-800, #424242);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-}
-
-
 
 </style>

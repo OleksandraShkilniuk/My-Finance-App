@@ -3,7 +3,6 @@
 <template>
 
 
-  <h2>auth Indec</h2>
   <login v-if="activePage === 'login'" @gotoRegister="activePage='registration'"/>
 
   <registration v-if="activePage === 'registration'" @gotoLogin="activePage='login'"/>
@@ -28,6 +27,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

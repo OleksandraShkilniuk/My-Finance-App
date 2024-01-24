@@ -1,12 +1,33 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import {defineStore} from 'pinia'
+import axios from "axios";
 
-export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
+export const useAccountStore = defineStore('account', {
+
+
+state: ()=> {
+  return {
+    account: null,
+  }
+},
+
+  getters: {
+
+    isAuthenticated: (state) => !!state.account,
+
+  },
+
+  actions: {
+  async fetchMyAccount() {
+    axios.get(`/my-account`).then((response)=> {
+      this.account = response.data;
+    })
+        .catch((error) => {
+          console.log('Error');
+          this.account = null;
+        })
   }
 
-  return { count, doubleCount, increment }
+  }
+
+
 })

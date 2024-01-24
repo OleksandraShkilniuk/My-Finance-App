@@ -1,7 +1,6 @@
 
 <template>
 
-  <h1>Login</h1>
   <div class="container container-fluid">
     <div class="d-flex justify-content-center row">
       <div class="logo"></div>
@@ -47,32 +46,5 @@ export default {
 
 <style>
 
-.btn-style {
-  text-decoration: none;
-  padding: 5px 12px;
-  width: 80px;
-  height: 30px;
-  border: black solid 1px;
-  color: black;
-
-}
-
-.form-inputs{
-  width: 300px;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.account-no {
-  color: var(--Grey-800, #424242);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.25px;
-}
 
 </style>

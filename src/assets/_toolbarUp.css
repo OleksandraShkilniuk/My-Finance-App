@@ -1,0 +1,31 @@
+
+.logo-widget {
+    background: url(".././icons/Kitty-Logo.svg") no-repeat center;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+}
+.naming-widget {
+    color: var(--Grey-800, #424242);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.user-icon {
+    background-color: mediumpurple;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+}
+
+.glass-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+}

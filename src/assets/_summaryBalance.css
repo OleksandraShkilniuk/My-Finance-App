@@ -1,0 +1,10 @@
+.summary-balance {
+    border: 1px solid var(--Grey-300, #E0E0E0);
+    padding: 16px 24px;
+
+    border-radius: 8px;
+}
+
+.summary-balance p{
+    margin: 0;
+}

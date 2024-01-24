@@ -1,0 +1,18 @@
+
+.day-expenses {
+    border-radius: 8px;
+    border: 1px solid var(--Grey-300, #E0E0E0);
+    padding: 10px;
+
+}
+
+.icon-category {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: lightgreen;
+}
+
+.space {
+    margin-bottom: 80px;
+}
