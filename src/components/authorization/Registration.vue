@@ -19,11 +19,8 @@
             <input type="text" class="form-control my-2" placeholder="Name" v-model.trim="registerData.name">
             <input type="email" class="form-control my-2" placeholder="Email" v-model.trim="registerData.email">
             <input type="password" class="form-control my-2" placeholder="Password" v-model.trim="registerData.password">
-<<<<<<< HEAD
             <input type="password" class="form-control" placeholder="Password confirmation" v-model.trim="registerData.password_confirmation">
-=======
-            <input type="password" class="form-control" placeholder="Password confirmation" v-model.trim="registerData.confirmPassword">
->>>>>>> f8fc1191a9571902b96b061b1007b5e92f75cac6
+            <input type="password" class="form-control" placeholder="Password confirmation" v-model.trim="registerData.password_confirmation">
 
         </div>
       </div>
