@@ -10,11 +10,13 @@
       </div>
       <div class="d-flex py-3">
         <div class="user-icon">
-          <div>M</div>
+
+<!--          todo: fix me with name slice-->
+          <div>{{accountStore.account.name}}</div>
         </div>
         <div class="mx-3">
-          <p class="user-name">John Doe</p>
-          <p>john.doe@gmail.com</p>
+          <p class="user-name">{{accountStore.account.name}}</p>
+          <p>{{accountStore.account.email}}</p>
         </div>
       </div>
     </header>
@@ -60,7 +62,7 @@
       <div class="d-flex justify-content-between px-4 my-3">
 
         <div class="d-flex">
-          <a href="#"><font-awesome-icon :icon="'arrow-right-from-bracket'" /></a>
+          <a href="#" @click="logout"><font-awesome-icon :icon="'arrow-right-from-bracket'" /></a>
           <div class="function-name">Logout</div>
 
         </div>
@@ -77,8 +79,24 @@
 
 <script>
 
+import {useAccountStore} from "@/stores/account.js";
+import {mapStores} from "pinia";
+
 export default {
   name: "SettingsAccountIndex",
+
+  computed: {
+    ...mapStores(useAccountStore),
+  },
+
+  methods: {
+    logout() {
+      axios.post(`/logout`).then(()=>{
+        this.accountStore.fetchMyAccount()
+      })
+    }
+  }
+
 }
 </script>
 

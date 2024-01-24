@@ -12,13 +12,13 @@
       <div class="form-inputs">
         <form action="#" method="post">
 
-          <input type="text" class="form-control my-2" placeholder="Email">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="text" class="form-control my-2" placeholder="Email" v-model.trim="loginData.email">
+          <input type="password" class="form-control" placeholder="Password" v-model.trim="loginData.password">
         </form>
       </div>
     </div>
 
-    <button type="button" class="btn btn-primary m-3">Sign In</button>
+    <button type="button" class="btn btn-primary m-3" @click="login">Sign In</button>
 
     <p class="account-no">Don’t have an account?</p>
 
@@ -31,12 +31,33 @@
 </template>
 
 <script>
+
+import {useAccountStore} from "@/stores/account.js";
+import {mapStores} from "pinia";
+
 export default {
   name: "Log in",
+  data() {
+    return {
+      loginData: {
+        email: null,
+        password: null,
+      }
+    }
+  },
+
+  computed: {
+    ...mapStores(useAccountStore),
+  },
 
   methods: {
     gotoRegister() {
       this.$emit('gotoRegister')
+    },
+    login() {
+      axios.post(`/login`, this.loginData).then((response)=> {
+        this.accountStore.fetchMyAccount()
+      })
     }
   }
 

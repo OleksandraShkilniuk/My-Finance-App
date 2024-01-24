@@ -1,5 +1,4 @@
 import {defineStore} from 'pinia'
-import axios from "axios";
 
 export const useAccountStore = defineStore('account', {
 
@@ -19,10 +18,9 @@ state: ()=> {
   actions: {
   async fetchMyAccount() {
     axios.get(`/my-account`).then((response)=> {
+      console.log(response.data)
       this.account = response.data;
-    })
-        .catch((error) => {
-          console.log('Error');
+    }).catch((error) => {
           this.account = null;
         })
   }
