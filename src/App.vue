@@ -1,9 +1,9 @@
 
 <template>
 
-  <auth-index v-if="!isAuthenticated"/>
+  <auth-index v-if="isAuthenticated"/>
 
-  <div v-if="isAuthenticated">
+  <div v-if="!isAuthenticated">
 
     <div>
 
