@@ -51,11 +51,7 @@ export default {
         name: null,
         email: null,
         password: null,
-<<<<<<< HEAD
         password_confirmation: null,
-=======
-        confirmPassword: null,
->>>>>>> f8fc1191a9571902b96b061b1007b5e92f75cac6
       }
     }
   },
@@ -66,17 +62,14 @@ export default {
     },
 
     register() {
-<<<<<<< HEAD
       axios.post(`/register`, this.registerData).then(()=> {
-      this.accountStore.fetchMyAccount()
-=======
-      axios.post('/register', this.registerData).then((response)=> {
-       console.log(response);
->>>>>>> f8fc1191a9571902b96b061b1007b5e92f75cac6
+        this.accountStore.fetchMyAccount()
+        axios.post('/register', this.registerData).then((response) => {
+          console.log(response);
+        })
       })
-    }
   }
-}
+},}
 </script>
 
 <style>
