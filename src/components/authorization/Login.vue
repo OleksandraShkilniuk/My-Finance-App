@@ -12,10 +12,22 @@
       <div class="form-inputs">
         <form action="#" method="post">
 
+          <div v-if="validationErrors.email" class="error-container">
+            *{{validationErrors.email[0]}}
+          </div>
+
           <input type="text" class="form-control my-2" placeholder="Email" v-model.trim="loginData.email">
+
           <input type="password" class="form-control" placeholder="Password" v-model.trim="loginData.password">
+
         </form>
       </div>
+    </div>
+    <div v-if="validationErrors.length > 0" class="error-container">
+      <h3>Validation Errors:</h3>
+      <ul>
+        <li v-for="(error, index) in validationErrors" :key="index">{{ error }}</li>
+      </ul>
     </div>
 
     <button type="button" class="btn btn-primary m-3" @click="login">Sign In</button>
@@ -43,7 +55,8 @@ export default {
       loginData: {
         email: null,
         password: null,
-      }
+      },
+      validationErrors: []
     }
   },
 
@@ -56,26 +69,20 @@ export default {
       this.$emit('gotoRegister')
     },
     login() {
+      this.validationErrors = [];
       axios.post(`/login`, this.loginData).then((response)=> {
         this.accountStore.fetchMyAccount()
       })
-          .catch(function (error) {
-            if (error.response) {
-              console.log(error.response.data);
-              console.log(error.response.status);
-              console.log(error.response.headers);
-            } else if (error.request) {
-              // The request was made but no response was received
-              // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-              // http.ClientRequest in node.js
-              console.log(error.request);
-            } else {
-              // Something happened in setting up the request that triggered an Error
-              console.log('Error', error.message);
+          .catch((error) => {
+
+            // Access additional details or validation errors if available
+            if (error.response.data && error.response.data.errors) {
+              console.error("Validation errors:", error.response.data.errors);
+              this.validationErrors = error.response.data.errors;
+              console.log(this.validationErrors);
             }
-            console.log(error.config);
           });
-    }
+    },
   }
 
 }
