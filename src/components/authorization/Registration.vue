@@ -20,7 +20,6 @@
             <input type="email" class="form-control my-2" placeholder="Email" v-model.trim="registerData.email">
             <input type="password" class="form-control my-2" placeholder="Password" v-model.trim="registerData.password">
             <input type="password" class="form-control" placeholder="Password confirmation" v-model.trim="registerData.password_confirmation">
-            <input type="password" class="form-control" placeholder="Password confirmation" v-model.trim="registerData.password_confirmation">
 
         </div>
       </div>
@@ -61,9 +60,8 @@ export default {
     register() {
       axios.post(`/register`, this.registerData).then(()=> {
         this.accountStore.fetchMyAccount()
-        axios.post('/register', this.registerData).then((response) => {
-          console.log(response);
-        })
+        window.location.reload();
+
       })
   }
 },}

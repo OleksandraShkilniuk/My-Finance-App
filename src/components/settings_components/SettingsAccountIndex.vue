@@ -11,8 +11,7 @@
       <div class="d-flex py-3">
         <div class="user-icon">
 
-<!--          todo: fix me with name slice-->
-          <div>{{accountStore.account.name}}</div>
+          <div>{{accountStore.account.name.slice(0,1)}}</div>
         </div>
         <div class="mx-3">
           <p class="user-name">{{accountStore.account.name}}</p>

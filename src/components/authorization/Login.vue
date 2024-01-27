@@ -34,6 +34,7 @@
 
 import {useAccountStore} from "@/stores/account.js";
 import {mapStores} from "pinia";
+import {AxiosError} from "axios";
 
 export default {
   name: "Log in",
@@ -58,6 +59,22 @@ export default {
       axios.post(`/login`, this.loginData).then((response)=> {
         this.accountStore.fetchMyAccount()
       })
+          .catch(function (error) {
+            if (error.response) {
+              console.log(error.response.data);
+              console.log(error.response.status);
+              console.log(error.response.headers);
+            } else if (error.request) {
+              // The request was made but no response was received
+              // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+              // http.ClientRequest in node.js
+              console.log(error.request);
+            } else {
+              // Something happened in setting up the request that triggered an Error
+              console.log('Error', error.message);
+            }
+            console.log(error.config);
+          });
     }
   }
 
