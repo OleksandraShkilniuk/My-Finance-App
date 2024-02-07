@@ -9,15 +9,13 @@
 
 
     <summary-balance/>
-
-    <!--    DAY 1-->
     <div class="my-4 day-expenses"
-
+         v-for="(group, date) in groupedObjects" :key="date"
     >
 
       <div class="d-flex justify-content-between">
         <div>
-          Date
+          {{ date }}
         </div>
         <div>
           Amount
@@ -25,7 +23,7 @@
       </div>
 
       <div class="d-flex my-3 justify-content-between align-items-baseline"
-      v-for="transaction in transactionsStore.transactions"
+      v-for="transaction in group"
            :key="transaction.id"
            @click="editTransaction(transaction)"
       >
@@ -67,7 +65,22 @@ export default {
   name: "History",
   components: {Toolbar, MonthToggler, SummaryBalance, TransactionForm},
   computed:{
-    ...mapStores(useTransactionsStore, useCategoriesStore,)
+    ...mapStores(useTransactionsStore, useCategoriesStore,),
+    groupedObjects() {
+      return this.transactionsStore.transactions.reduce((groups, item) => {
+        const date = new Date(item.created_at).toLocaleDateString(undefined, {
+          month: 'short', // Abbreviated month name (e.g., "Feb")
+          day: 'numeric', // Numeric day (e.g., "07")
+          year: 'numeric' // Full year (e.g., "2024")
+        });
+        if (!groups[date]) {
+          groups[date] = [];
+        }
+        groups[date].push(item);
+        console.log(groups[item])
+        return groups;
+      }, {});
+    }
   },
 
   methods: {
