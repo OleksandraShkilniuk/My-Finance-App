@@ -55,7 +55,7 @@ export default {
     return {
       registration: false,
       activePage: 'Home',
-      transactionForm: false,
+      transactionForm: true,
 
     }
   },

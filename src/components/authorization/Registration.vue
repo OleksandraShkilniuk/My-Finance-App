@@ -16,7 +16,7 @@
         <div class="form-inputs">
 
 
-          <input type="text" :class="validationErrors.name ? 'is-invalid' : ''" class="form-control my-2"
+          <input type="text" :class="{'is-invalid' : !!validationErrors.email}" class="form-control my-2"
                  placeholder="Name" v-model.trim="registerData.name">
 
           <div v-if="validationErrors.name" class="invalid-feedback">
@@ -24,7 +24,7 @@
           </div>
 
 
-          <input type="email" :class="validationErrors.email ? 'is-invalid' : ''" class="form-control my-2"
+          <input type="email" :class="{'is-invalid' : !!validationErrors.email}" class="form-control my-2"
                  placeholder="Email" v-model.trim="registerData.email">
 
 
@@ -33,7 +33,7 @@
           </div>
 
 
-          <input type="password" :class="validationErrors.password ? 'is-invalid' : ''" class="form-control my-2"
+          <input type="password" :class="{'is-invalid' : !!validationErrors.password}" class="form-control my-2"
                  placeholder="Password" v-model.trim="registerData.password">
 
           <div v-if="validationErrors.password" class="invalid-feedback">
@@ -41,10 +41,10 @@
           </div>
 
 
-          <input type="password" :class="validationErrors.password ? 'is-invalid' : ''" class="form-control"
+          <input type="password" :class="{'is-invalid':!!validationErrors.password_confirmation}" class="form-control"
                  placeholder="Password confirmation" v-model.trim="registerData.password_confirmation">
           <div v-if="validationErrors.password" class="invalid-feedback">
-            {{ validationErrors.password[1] }}
+            {{ validationErrors.password[1]}}
           </div>
         </div>
       </div>

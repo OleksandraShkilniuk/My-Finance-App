@@ -3,14 +3,14 @@
 
   <div class="d-flex my-4 justify-content-around summary-balance">
 
-    <div>
-      <font-awesome-icon :icon="'money-bills'" />
+    <div @click="coreState('expenses')">
+      <font-awesome-icon :icon="'money-bills'"/>
       <p class="text-danger">-12000</p>
       <div class="expenses">Expenses</div>
     </div>
 
-    <div>
-      <font-awesome-icon :icon="'building-columns'" />
+    <div @click="coreState('incomes')">
+      <font-awesome-icon :icon="'building-columns'"/>
       <p class="text-success">-12000</p>
       <div class="income">Income</div>
     </div>
@@ -27,8 +27,21 @@
 </template>
 
 <script>
+import {mapStores} from "pinia";
+import {useCoreStore} from "@/stores/core.js";
+
 export default {
-  name: "SummaryBalance"
+  name: "SummaryBalance",
+
+  computed: {
+    ...mapStores(useCoreStore)
+  },
+  methods: {
+    coreState(state) {
+      this.coreStore.state = state
+    }
+
+  }
 }
 </script>
 
