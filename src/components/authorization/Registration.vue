@@ -16,24 +16,26 @@
         <div class="form-inputs">
 
 
-          <input type="text" :class="{'is-invalid' : !!validationErrors.email}" class="form-control my-2"
+          <input type="text" :class="{'is-invalid': validationErrors.name && validationErrors.name.length}" class="form-control my-2"
                  placeholder="Name" v-model.trim="registerData.name">
 
-          <div v-if="validationErrors.name" class="invalid-feedback">
-            {{ validationErrors.name[0] }}
+          <div v-if="validationErrors.name" class="invalid-feedback" v-for="error in validationErrors.name"
+          :key="error">
+            {{ error }}
           </div>
 
 
-          <input type="email" :class="{'is-invalid' : !!validationErrors.email}" class="form-control my-2"
+          <input type="email" :class="{'is-invalid': validationErrors.email && validationErrors.email.length}" class="form-control my-2"
                  placeholder="Email" v-model.trim="registerData.email">
 
 
-          <div v-if="validationErrors.email" class="invalid-feedback">
-            {{ validationErrors.email[0] }}
+          <div v-if="validationErrors.email" class="invalid-feedback"
+          v-for="emaliError in validationErrors.email">
+            {{ emaliError }}
           </div>
 
 
-          <input type="password" :class="{'is-invalid' : !!validationErrors.password}" class="form-control my-2"
+          <input type="password" :class="{'is-invalid': validationErrors.password && validationErrors.password.length}" class="form-control my-2"
                  placeholder="Password" v-model.trim="registerData.password">
 
           <div v-if="validationErrors.password" class="invalid-feedback">
@@ -41,7 +43,7 @@
           </div>
 
 
-          <input type="password" :class="{'is-invalid':!!validationErrors.password_confirmation}" class="form-control"
+          <input type="password" :class="{'is-invalid': validationErrors.password && validationErrors.password.length}" class="form-control"
                  placeholder="Password confirmation" v-model.trim="registerData.password_confirmation">
           <div v-if="validationErrors.password" class="invalid-feedback">
             {{ validationErrors.password[1]}}

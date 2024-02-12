@@ -28,7 +28,7 @@
            @click="editTransaction(transaction)"
       >
 
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center text-start">
 
           <div class="icon-category mx-2 d-flex justify-content-center align-items-center">
             <div>
